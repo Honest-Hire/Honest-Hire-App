@@ -79,7 +79,7 @@ Please note that this application provides a best-effort approach to detecting c
 
 ## License
 
-ISC License
+MIT 
 
 ## Privacy Notice
 
