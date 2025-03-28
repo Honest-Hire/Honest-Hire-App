@@ -1,0 +1,75 @@
+{
+  "name": "interview-integrity-scanner",
+  "version": "1.0.0",
+  "description": "An application to detect interview cheating methods",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win"
+  },
+  "keywords": [
+    "interview",
+    "security",
+    "monitoring"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
+    "electron-store": "^10.0.1",
+    "electron-util": "^0.17.2",
+    "framer-motion": "^10.12.12",
+    "node-hid": "^2.1.2",
+    "node-machine-id": "^1.1.12",
+    "ps-list": "^8.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "systeminformation": "^5.17.12",
+    "usb": "^2.9.0",
+    "wait-on": "^7.0.1"
+  },
+  "devDependencies": {
+    "electron": "^24.3.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.interview.integrity.scanner",
+    "productName": "Interview Integrity Scanner",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg"
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ]
+  }
+}
