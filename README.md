@@ -1,5 +1,7 @@
 # Interview Integrity Scanner
 
+![image](https://github.com/user-attachments/assets/bfec654c-9f75-489c-ae0e-e0feee2f7130)
+
 A tool to detect potential cheating methods during online interviews.
 
 ## Prerequisites
@@ -50,6 +52,7 @@ To create a distributable:
 ```bash
 npm run build
 ```
+![image](https://github.com/user-attachments/assets/e0ac8ffa-f8c5-44a8-802f-9894e05fdf96)
 
 ## Troubleshooting
 
