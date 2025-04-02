@@ -87,3 +87,6 @@ MIT
 ## Privacy Notice
 
 This application only collects information locally and does not transmit any data outside of your device. The scans performed are for the purpose of verifying interview integrity and are not stored beyond the application session. 
+
+## Disclaimer
+Mention of "Interview Coder" in either social media handles of contributors or any other github discussion/issues/similar pages refers to the project of "Interview Coder" by Honest Hire (available: here https://github.com/Honest-Hire/InterviewCoder) It should not be confused by any other online tool
