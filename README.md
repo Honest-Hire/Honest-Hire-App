@@ -5,8 +5,6 @@
 
 A tool to detect potential cheating methods during online interviews.
 
-![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
-
 
 ## Prerequisites
 
@@ -19,6 +17,10 @@ A tool to detect potential cheating methods during online interviews.
 - For Windows:
   - Visual Studio Build Tools with C++ support
   - Python (2.7 or 3.x)
+
+
+![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
+
 
 ## Setup & Run
 
