@@ -86,14 +86,12 @@ If you encounter build errors:
 
 - **Display Configuration Check**: Detects if multiple displays are connected, which could potentially be used to view unauthorized information during an interview.
   
-## Technical Details
 
-This application is built using Electron and uses system information APIs to detect potential cheating methods. The detection mechanisms include:
- **Keyboard Device Detection**: Scans USB devices to identify connected keyboard devices.
 
 ## Note on Detection Limitations
 
-Please note that this application provides a best-effort approach to detecting cheating methods. It may not detect all forms of cheating, especially if sophisticated methods are employed. It is recommended to use this as one part of a comprehensive integrity strategy for online interviews.
+Please note that this application is at it's v1 stage and follows a low hanging fruit approach to detect a very popular cheating tool. 
+As mentioned in the issue of https://github.com/Honest-Hire/Honest-Hire-App/issues/10 It may not detect all forms of cheating. Kindly checkout this mentioned issue for more details
 
 ## License
 
