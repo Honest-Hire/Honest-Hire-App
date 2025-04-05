@@ -1,8 +1,12 @@
 # Honest Hire Interview Integrity Scanner
 
-![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
+
+![image](https://github.com/user-attachments/assets/804b3df6-d296-4522-af60-ba03788c8f95)
 
 A tool to detect potential cheating methods during online interviews.
+
+![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
+
 
 ## Prerequisites
 
