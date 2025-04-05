@@ -8,6 +8,9 @@ yarn.lock
 
 # Electron specific
 dist/
+dist-electron/*
+!dist-electron/vendor/
+!dist-electron/vendor/**
 build/
 release/
 *.asar

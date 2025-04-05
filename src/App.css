@@ -203,16 +203,18 @@ body {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
 .btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: 500;
@@ -220,7 +222,7 @@ body {
   transition: var(--transition);
   border: none;
   outline: none;
-  gap: 0.5rem;
+  font-size: 1rem;
 }
 
 .btn-primary {
@@ -230,41 +232,48 @@ body {
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background-color: rgba(108, 117, 125, 0.1);
+  color: var(--text-secondary);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(67, 97, 238, 0.1);
-}
-
-.actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  justify-content: center;
+  background-color: rgba(108, 117, 125, 0.2);
+  transform: translateY(-2px);
 }
 
 .app-footer {
   padding: 1rem 0;
+  background-color: var(--card-bg);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: 0.85rem;
   color: var(--text-secondary);
-  margin-top: auto;
+  font-size: 0.9rem;
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s ease forwards;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -272,24 +281,3 @@ body {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
-.animate-pulse {
-  animation: pulse 2s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .checks-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .app-header .container {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .logo {
-    margin-bottom: 1rem;
-    justify-content: center;
-  }
-} 
