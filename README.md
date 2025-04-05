@@ -1,6 +1,6 @@
-# Interview Integrity Scanner
+# Honest Hire Interview Integrity Scanner
 
-![image](https://github.com/user-attachments/assets/bfec654c-9f75-489c-ae0e-e0feee2f7130)
+![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
 
 A tool to detect potential cheating methods during online interviews.
 
@@ -52,9 +52,23 @@ To create a distributable:
 ```bash
 npm run build
 ```
-![image](https://github.com/user-attachments/assets/e0ac8ffa-f8c5-44a8-802f-9894e05fdf96)
+![image](https://github.com/user-attachments/assets/79edfdb8-61ab-415c-a4d5-6df88407c458)
+
+
+## Release Notes from v1.0.0
+This is the first release version of Honest Hire
+A simple app to detect if candidate could be cheating during live interview.
+
+Only two detection strategies are supported
+
+1. Detecting if the candidate is using the "Interview Coder", a AI app popularly used for cheating
+2. Detecting if the candidate is using multiple monitors (it has been observed, a second monitor which mirrored display has been the number one method of cheating even by experienced candidates"
 
 ## Troubleshooting
+
+
+There have been some issues with windows installation, where a depency called "fastlist-0.3.0-x64.exe" has been introduced by electron during the build process. The current fix is to either running the code locally as a dev server or building the executable file locally by running npm run build-win
+
 
 If you encounter build errors:
 1. Make sure all prerequisites are installed
@@ -65,16 +79,11 @@ If you encounter build errors:
 ## Features
 
 - **Display Configuration Check**: Detects if multiple displays are connected, which could potentially be used to view unauthorized information during an interview.
-- **Screen Sharing Check**: Verifies if the screen is being shared to multiple applications simultaneously, which might be used to receive external help.
-- **Keyboard Device Check**: Detects if multiple keyboard devices are connected, which could potentially be used by someone else to provide answers.
-
+  
 ## Technical Details
 
 This application is built using Electron and uses system information APIs to detect potential cheating methods. The detection mechanisms include:
-
-1. **Multiple Display Detection**: Uses the system's display configuration to detect if more than one display is connected.
-2. **Screen Sharing Detection**: Analyzes running processes to identify common screen sharing applications.
-3. **Keyboard Device Detection**: Scans USB devices to identify connected keyboard devices.
+ **Keyboard Device Detection**: Scans USB devices to identify connected keyboard devices.
 
 ## Note on Detection Limitations
 
