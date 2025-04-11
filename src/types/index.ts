@@ -29,6 +29,56 @@ export interface InterviewCoderCheckResult {
   error?: string;
 }
 
+export interface NetworkActivityInfo {
+  detectedTimes: number;
+  totalSamples: number;
+  lastSeenAt: Date;
+}
+
+export interface SuspiciousProcess {
+  pid: number;
+  name: string;
+  command: string;
+  memoryMB: number;
+  cpuPercent: number;
+  networkActivity?: NetworkActivityInfo | null;
+}
+
+export interface HighMemoryProcessResult {
+  success: boolean;
+  highMemoryProcesses?: SuspiciousProcess[];
+  totalCount?: number;
+  error?: string;
+}
+
+export interface NetworkProcess {
+  pid: number;
+  name: string;
+  command?: string;
+  lastSeenAt: Date;
+  connectionCount: number;
+  detectedTimes: number;
+}
+
+export interface NetworkActivityResult {
+  success: boolean;
+  connections?: string[];
+  networkProcessPids?: number[];
+  networkProcesses?: NetworkProcess[];
+  totalSamples?: number;
+  error?: string;
+}
+
+export interface MonitoringUpdate {
+  timestamp: string;
+  highMemoryCount: number;
+  networkActivityCount: number;
+  suspiciousCount: number;
+  suspiciousProcesses: SuspiciousProcess[];
+  monitoringSince?: Date;
+  networkSamples?: number;
+}
+
 export interface AppState {
   displays: {
     status: 'idle' | 'pending' | 'success' | 'error';
@@ -38,6 +88,16 @@ export interface AppState {
   interviewCoder: {
     status: 'idle' | 'pending' | 'success' | 'error';
     result: InterviewCoderCheckResult | null;
+    error: string | null;
+  };
+  highMemoryProcesses: {
+    status: 'idle' | 'pending' | 'success' | 'error';
+    result: HighMemoryProcessResult | null;
+    error: string | null;
+  };
+  networkActivity: {
+    status: 'idle' | 'pending' | 'success' | 'error';
+    result: NetworkActivityResult | null;
     error: string | null;
   };
 }

@@ -281,3 +281,142 @@ body {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+/* Monitoring Panel */
+.monitoring-panel {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #3498db;
+}
+
+.monitoring-panel h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: #333;
+}
+
+.monitoring-panel h3 svg {
+  margin-right: 8px;
+  color: #3498db;
+}
+
+.monitoring-active-badge {
+  background-color: #3498db;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.last-update {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.monitoring-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.stat {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 120px;
+}
+
+.stat .label {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.stat .value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat .value.alert {
+  color: #e74c3c;
+}
+
+.suspicious-processes {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+}
+
+.suspicious-processes h4 {
+  margin-top: 0;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.suspicious-processes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suspicious-processes li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.suspicious-process-item {
+  padding: 10px 0;
+}
+
+.process-name {
+  margin-bottom: 5px;
+}
+
+.process-details {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 3px;
+  font-style: italic;
+}
+
+.suspicious-processes li:last-child {
+  border-bottom: none;
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #e67e22;
+}
+
+/* Responsive adjustments for monitoring stats */
+@media (max-width: 768px) {
+  .stat {
+    min-width: 100%;
+  }
+}
