@@ -15,6 +15,7 @@
   "dependencies": {
     "electron-is-dev": "^2.0.0",
     "electron-store": "^10.0.1",
+    "find-process": "^1.4.7",
     "node-hid": "^2.1.2",
     "node-machine-id": "^1.1.12",
     "ps-list": "^8.1.1",

@@ -43,6 +43,34 @@ export const CodeIcon: React.FC<IconProps> = ({ className }) => (
   </svg>
 );
 
+export const NetworkIcon: React.FC<IconProps> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"></path>
+    <polyline points="18 2 22 6 12 16 8 16 8 12 18 2"></polyline>
+  </svg>
+);
+
+export const MemoryIcon: React.FC<IconProps> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+    <rect x="9" y="9" width="6" height="6"></rect>
+    <line x1="9" y1="2" x2="9" y2="4"></line>
+    <line x1="15" y1="2" x2="15" y2="4"></line>
+    <line x1="9" y1="20" x2="9" y2="22"></line>
+    <line x1="15" y1="20" x2="15" y2="22"></line>
+    <line x1="20" y1="9" x2="22" y2="9"></line>
+    <line x1="20" y1="14" x2="22" y2="14"></line>
+    <line x1="2" y1="9" x2="4" y2="9"></line>
+    <line x1="2" y1="14" x2="4" y2="14"></line>
+  </svg>
+);
+
+export const MonitorIcon: React.FC<IconProps> = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+  </svg>
+);
+
 export const SuccessIcon: React.FC<IconProps> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
