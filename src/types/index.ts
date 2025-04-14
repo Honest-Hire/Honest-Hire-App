@@ -85,16 +85,6 @@ export interface AppState {
     result: DisplayCheckResult | null;
     error: string | null;
   };
-  interviewCoder: {
-    status: 'idle' | 'pending' | 'success' | 'error';
-    result: InterviewCoderCheckResult | null;
-    error: string | null;
-  };
-  highMemoryProcesses: {
-    status: 'idle' | 'pending' | 'success' | 'error';
-    result: HighMemoryProcessResult | null;
-    error: string | null;
-  };
   networkActivity: {
     status: 'idle' | 'pending' | 'success' | 'error';
     result: NetworkActivityResult | null;

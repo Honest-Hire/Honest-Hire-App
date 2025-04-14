@@ -2,12 +2,10 @@ import { useState, useEffect } from 'react';
 import CheckItem from './components/CheckItem';
 import { 
   DisplayIcon,
-  CodeIcon, 
   InfoIcon, 
   RestartIcon, 
   Spinner,
   NetworkIcon,
-  MemoryIcon,
   MonitorIcon
 } from './components/Icons';
 import { AppState, MonitoringUpdate, SuspiciousProcess } from './types';
@@ -16,16 +14,6 @@ import './App.css';
 function App() {
   const [state, setState] = useState<AppState>({
     displays: {
-      status: 'idle',
-      result: null,
-      error: null
-    },
-    interviewCoder: {
-      status: 'idle',
-      result: null,
-      error: null
-    },
-    highMemoryProcesses: {
       status: 'idle',
       result: null,
       error: null
@@ -68,18 +56,6 @@ function App() {
         result: null,
         error: null
       },
-      interviewCoder: {
-        ...prevState.interviewCoder,
-        status: 'pending',
-        result: null,
-        error: null
-      },
-      highMemoryProcesses: {
-        ...prevState.highMemoryProcesses,
-        status: 'pending',
-        result: null,
-        error: null
-      },
       networkActivity: {
         ...prevState.networkActivity,
         status: 'pending',
@@ -90,8 +66,6 @@ function App() {
     
     try {
       await checkDisplays();
-      await checkInterviewCoder();
-      await checkHighMemoryProcesses();
       await checkNetworkActivity();
     } catch (error) {
       console.error('Error running checks:', error);
@@ -101,16 +75,6 @@ function App() {
   const resetChecks = () => {
     setState({
       displays: {
-        status: 'idle',
-        result: null,
-        error: null
-      },
-      interviewCoder: {
-        status: 'idle',
-        result: null,
-        error: null
-      },
-      highMemoryProcesses: {
         status: 'idle',
         result: null,
         error: null
@@ -143,52 +107,6 @@ function App() {
       setState(prevState => ({
         ...prevState,
         displays: {
-          status: 'error',
-          result: null,
-          error: error instanceof Error ? error.message : 'Unknown error'
-        }
-      }));
-    }
-  };
-
-  const checkInterviewCoder = async () => {
-    try {
-      const result = await window.ipcRenderer.invoke('check-interview-coder');
-      setState(prevState => ({
-        ...prevState,
-        interviewCoder: {
-          status: 'success',
-          result,
-          error: null
-        }
-      }));
-    } catch (error) {
-      setState(prevState => ({
-        ...prevState,
-        interviewCoder: {
-          status: 'error',
-          result: null,
-          error: error instanceof Error ? error.message : 'Unknown error'
-        }
-      }));
-    }
-  };
-  
-  const checkHighMemoryProcesses = async () => {
-    try {
-      const result = await window.ipcRenderer.invoke('check-high-memory-processes');
-      setState(prevState => ({
-        ...prevState,
-        highMemoryProcesses: {
-          status: 'success',
-          result,
-          error: null
-        }
-      }));
-    } catch (error) {
-      setState(prevState => ({
-        ...prevState,
-        highMemoryProcesses: {
           status: 'error',
           result: null,
           error: error instanceof Error ? error.message : 'Unknown error'
@@ -267,24 +185,6 @@ function App() {
                 status={state.displays.status}
                 result={state.displays.result}
                 error={state.displays.error}
-              />
-              <CheckItem
-                id="interviewCoder"
-                title="Interview Coder Check"
-                icon={<CodeIcon />}
-                description="Detects if any 'Interview Coder' processes are running."
-                status={state.interviewCoder.status}
-                result={state.interviewCoder.result}
-                error={state.interviewCoder.error}
-              />
-              <CheckItem
-                id="highMemoryProcesses"
-                title="High Memory Usage Processes"
-                icon={<MemoryIcon />}
-                description="Identifies processes using more than 50MB of memory."
-                status={state.highMemoryProcesses.status}
-                result={state.highMemoryProcesses.result}
-                error={state.highMemoryProcesses.error}
               />
               <CheckItem
                 id="networkActivity"
@@ -368,14 +268,10 @@ function App() {
                 className="btn btn-primary"
                 disabled={
                   state.displays.status === 'pending' || 
-                  state.interviewCoder.status === 'pending' ||
-                  state.highMemoryProcesses.status === 'pending' ||
                   state.networkActivity.status === 'pending'
                 }
               >
                 {(state.displays.status === 'pending' || 
-                  state.interviewCoder.status === 'pending' ||
-                  state.highMemoryProcesses.status === 'pending' ||
                   state.networkActivity.status === 'pending') 
                   ? <><Spinner /> Scanning...</> 
                   : <><InfoIcon /> Start Scan</>
