@@ -174,7 +174,7 @@ function App() {
             <h2 className="card-title">Honest Hire Integrity Check</h2>
             <p className="card-description">
               This tool helps ensure the integrity of online interviews by monitoring system resources and network activity.
-              Click the button below to start the scan.
+              Click the button below to start continuous monitoring.
             </p>
             
             <div className="checks-container">
