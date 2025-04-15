@@ -153,6 +153,7 @@ function App() {
         ...prev,
         active: true
       }));
+      runChecks();
     }
   };
 
@@ -264,22 +265,8 @@ function App() {
             
             <div className="actions">
               <button 
-                onClick={runChecks} 
-                className="btn btn-primary"
-                disabled={
-                  state.displays.status === 'pending' || 
-                  state.networkActivity.status === 'pending'
-                }
-              >
-                {(state.displays.status === 'pending' || 
-                  state.networkActivity.status === 'pending') 
-                  ? <><Spinner /> Scanning...</> 
-                  : <><InfoIcon /> Start Scan</>
-                }
-              </button>
-              <button 
                 onClick={toggleMonitoring} 
-                className={`btn ${monitoring.active ? 'btn-warning' : 'btn-secondary'}`}
+                className={`btn ${monitoring.active ? 'btn-warning' : 'btn-primary'}`}
               >
                 <MonitorIcon /> {monitoring.active ? 'Stop Monitoring' : 'Start Continuous Monitoring'}
               </button>
