@@ -153,6 +153,7 @@ function App() {
         ...prev,
         active: true
       }));
+      runChecks();
     }
   };
 
@@ -173,7 +174,7 @@ function App() {
             <h2 className="card-title">Honest Hire Integrity Check</h2>
             <p className="card-description">
               This tool helps ensure the integrity of online interviews by monitoring system resources and network activity.
-              Click the button below to start the scan.
+              Click the button below to start continuous monitoring.
             </p>
             
             <div className="checks-container">
@@ -264,22 +265,8 @@ function App() {
             
             <div className="actions">
               <button 
-                onClick={runChecks} 
-                className="btn btn-primary"
-                disabled={
-                  state.displays.status === 'pending' || 
-                  state.networkActivity.status === 'pending'
-                }
-              >
-                {(state.displays.status === 'pending' || 
-                  state.networkActivity.status === 'pending') 
-                  ? <><Spinner /> Scanning...</> 
-                  : <><InfoIcon /> Start Scan</>
-                }
-              </button>
-              <button 
                 onClick={toggleMonitoring} 
-                className={`btn ${monitoring.active ? 'btn-warning' : 'btn-secondary'}`}
+                className={`btn ${monitoring.active ? 'btn-warning' : 'btn-primary'}`}
               >
                 <MonitorIcon /> {monitoring.active ? 'Stop Monitoring' : 'Start Continuous Monitoring'}
               </button>
@@ -293,7 +280,7 @@ function App() {
       
       <footer className="app-footer">
         <div className="container">
-          <p>Honest Hire Integrity Scanner v1.0.0 | &copy; {new Date().getFullYear()}</p>
+        <p>Honest Hire Integrity Scanner v1.1.0 | &copy; {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>

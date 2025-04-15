@@ -61,9 +61,10 @@ npm run build
 ![image](https://github.com/user-attachments/assets/79edfdb8-61ab-415c-a4d5-6df88407c458)
 
 
-## Release Notes from v1.0.0
-This is the first release version of Honest Hire
-A simple app to detect if candidate could be cheating during live interview.
+## Release Notes from v1.1.0
+- Removed "Start Scan" button
+- All checks now run automatically when continuous monitoring is active
+- Various improvements and bug fixes
 
 Only two detection strategies are supported
 
