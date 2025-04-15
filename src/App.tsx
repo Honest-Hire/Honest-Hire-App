@@ -293,7 +293,7 @@ function App() {
       
       <footer className="app-footer">
         <div className="container">
-          <p>Honest Hire Integrity Scanner v1.0.0 | &copy; {new Date().getFullYear()}</p>
+        <p>Honest Hire Integrity Scanner v1.1.0 | &copy; {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
