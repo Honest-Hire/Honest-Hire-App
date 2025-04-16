@@ -60,18 +60,6 @@ To create a distributable:
 ```bash
 npm run build
 ```
-![image](https://github.com/user-attachments/assets/79edfdb8-61ab-415c-a4d5-6df88407c458)
-
-
-## Release Notes from v1.1.0
-- Removed "Start Scan" button
-- All checks now run automatically when continuous monitoring is active
-- Various improvements and bug fixes
-
-Only two detection strategies are supported
-
-1. Detecting if the candidate is using the "Interview Coder", a AI app popularly used for cheating
-2. Detecting if the candidate is using multiple monitors (it has been observed, a second monitor which mirrored display has been the number one method of cheating even by experienced candidates"
 
 ## Troubleshooting
 
