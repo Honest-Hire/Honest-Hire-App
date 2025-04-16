@@ -19,7 +19,9 @@ A tool to detect potential cheating methods during online interviews.
   - Python (2.7 or 3.x)
 
 
-![image](https://github.com/user-attachments/assets/04905f38-7e26-4135-ab25-8ecb96b1c108)
+
+<img width="1436" alt="image" src="https://github.com/user-attachments/assets/9ab6ea6f-9a7b-425e-831e-80a6bd485e67" />
+
 
 
 ## Setup & Run
